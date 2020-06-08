@@ -4,6 +4,11 @@
       <w>aaccontributors</w>
       <w>auemura</w>
       <w>constraintlayout</w>
+      <w>kapt</w>
+      <w>kotlinx</w>
+      <w>livedata</w>
+      <w>savedstate</w>
+      <w>viewmodel</w>
     </words>
   </dictionary>
 </component>
