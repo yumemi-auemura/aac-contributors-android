@@ -4,7 +4,10 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
 }
+
+apply(plugin = "dagger.hilt.android.plugin")
 
 android {
     compileSdkVersion(29)
@@ -29,8 +32,8 @@ android {
         }
         mock {}
         release {
-            isMinifyEnabled = true // コードの圧縮
-            isShrinkResources = true // リソースの圧縮
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         testBuildType = "mock"
@@ -48,9 +51,32 @@ dependencies {
     implementation(fileTree("dir" to "libs", "include" to listOf("*.jar")))
 
     implementation(Dependencies.Kotlin.stdLib)
+    implementation(Dependencies.KotlinX.coroutinesCore)
+    implementation(Dependencies.KotlinX.coroutinesAndroid)
+    testImplementation(Dependencies.KotlinX.Test.coroutinesTest)
+
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation(Dependencies.AndroidX.livedata)
+    implementation(Dependencies.AndroidX.viewModel)
+    implementation(Dependencies.AndroidX.viewModelSavedState)
+
+    // Dagger2 https://github.com/google/dagger
+    api(Dependencies.Google.dagger)
+    kapt(Dependencies.Google.daggerCompiler)
+
+    // Dagger2 Hilt
+    implementation(Dependencies.Google.hiltAndroid)
+    kapt(Dependencies.Google.hiltAndroidCompiler)
+
+    // AndroidX + Dagger Hilt
+    implementation(Dependencies.AndroidX.hiltCommon)
+    implementation(Dependencies.AndroidX.hiltLifecycleViewModel)
+    kapt(Dependencies.AndroidX.hiltCompiler)
+
+    // AndroidX + Dagger Hilt
+    implementation(Dependencies.AndroidX.hiltWork)
 
     testImplementation(Dependencies.Test.jUnit)
 
