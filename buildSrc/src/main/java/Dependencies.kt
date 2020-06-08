@@ -12,15 +12,38 @@ object Dependencies {
         const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}"
     }
 
+    object KotlinX {
+        const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6"
+        const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
+
+        object Test {
+            const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.6"
+        }
+    }
+
     object AndroidX {
         const val core = "androidx.core:core-ktx:${coreVersion}"
         const val appCompat = "androidx.appcompat:appcompat:${appCompatVersion}"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
+        const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+        const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+        const val viewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+        const val hiltCommon = "androidx.hilt:hilt-common:1.0.0-SNAPSHOT"
+        const val hiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-SNAPSHOT"
+        const val hiltCompiler = "androidx.hilt:hilt-compiler:1.0.0-SNAPSHOT"
+        const val hiltWork = "androidx.hilt:hilt-work:1.0.0-SNAPSHOT"
 
         object Test {
             const val jUnit = "androidx.test.ext:junit:${jUnitExtVersion}"
             const val espresso = "androidx.test.espresso:espresso-core:${espressoVersion}"
         }
+    }
+
+    object Google {
+        const val dagger = "com.google.dagger:dagger:2.28"
+        const val daggerCompiler = "com.google.dagger:dagger-compiler:2.28"
+        const val hiltAndroid = "com.google.dagger:hilt-android:2.28-alpha"
+        const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:2.28-alpha"
     }
 
     object Test {
