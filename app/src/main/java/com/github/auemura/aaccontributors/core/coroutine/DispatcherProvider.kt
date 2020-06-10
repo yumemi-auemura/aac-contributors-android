@@ -1,4 +1,4 @@
-package com.github.auemura.aaccontributors.coroutine
+package com.github.auemura.aaccontributors.core.coroutine
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

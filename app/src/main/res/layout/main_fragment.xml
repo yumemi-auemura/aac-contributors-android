@@ -20,6 +20,7 @@
             android:id="@+id/main_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{ () -> viewModel.onSingleClicked() }"
             android:text="@{ viewModel.greeting }"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

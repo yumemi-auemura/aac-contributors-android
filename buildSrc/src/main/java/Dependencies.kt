@@ -48,6 +48,11 @@ object Dependencies {
         const val hiltAndroidCompiler = "com.google.dagger:hilt-android-compiler:2.28-alpha"
     }
 
+    object Airbnb {
+        const val epoxy = "com.airbnb.android:epoxy:4.0.0-beta4"
+        const val epoxyProcessor = "com.airbnb.android:epoxy-processor:4.0.0-beta4"
+    }
+
     object Test {
         const val jUnit = "junit:junit:${jUnitVersion}"
     }
