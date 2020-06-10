@@ -32,6 +32,8 @@ object Dependencies {
         const val hiltLifecycleViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-SNAPSHOT"
         const val hiltCompiler = "androidx.hilt:hilt-compiler:1.0.0-SNAPSHOT"
         const val hiltWork = "androidx.hilt:hilt-work:1.0.0-SNAPSHOT"
+        const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:2.3.0-beta01"
+        const val navigationUi = "androidx.navigation:navigation-ui-ktx:2.3.0-beta01"
 
         object Test {
             const val jUnit = "androidx.test.ext:junit:${jUnitExtVersion}"
