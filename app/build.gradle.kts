@@ -8,6 +8,7 @@ plugins {
 }
 
 apply(plugin = "dagger.hilt.android.plugin")
+apply(plugin = "androidx.navigation.safeargs.kotlin")
 
 android {
     compileSdkVersion(29)
@@ -45,6 +46,7 @@ android {
             jvmTarget = "1.8"
         }
     }
+    buildFeatures.dataBinding = true
 }
 
 dependencies {
@@ -61,6 +63,8 @@ dependencies {
     implementation(Dependencies.AndroidX.livedata)
     implementation(Dependencies.AndroidX.viewModel)
     implementation(Dependencies.AndroidX.viewModelSavedState)
+    implementation(Dependencies.AndroidX.navigationFragment)
+    implementation(Dependencies.AndroidX.navigationUi)
 
     // Dagger2 https://github.com/google/dagger
     api(Dependencies.Google.dagger)
