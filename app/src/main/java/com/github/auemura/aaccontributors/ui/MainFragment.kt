@@ -17,6 +17,9 @@ class MainFragment : Fragment(R.layout.main_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.mainTextView.text = viewModel.hello()
+        binding.let {
+            it.lifecycleOwner = viewLifecycleOwner
+            it.viewModel = viewModel
+        }
     }
 }
