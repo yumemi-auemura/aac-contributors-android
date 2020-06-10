@@ -82,6 +82,10 @@ dependencies {
     // AndroidX + Dagger Hilt
     implementation(Dependencies.AndroidX.hiltWork)
 
+    // Epoxy
+    implementation(Dependencies.Airbnb.epoxy)
+    kapt(Dependencies.Airbnb.epoxyProcessor)
+
     testImplementation(Dependencies.Test.jUnit)
 
     androidTestImplementation(Dependencies.AndroidX.Test.jUnit)

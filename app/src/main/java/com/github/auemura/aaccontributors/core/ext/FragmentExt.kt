@@ -1,4 +1,4 @@
-package com.github.auemura.aaccontributors.ext
+package com.github.auemura.aaccontributors.core.ext
 
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding

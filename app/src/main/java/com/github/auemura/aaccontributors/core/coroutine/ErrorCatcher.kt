@@ -1,4 +1,4 @@
-package com.github.auemura.aaccontributors.coroutine
+package com.github.auemura.aaccontributors.core.coroutine
 
 import com.github.auemura.aaccontributors.ui.error.ErrorController
 import kotlinx.coroutines.CoroutineExceptionHandler
