@@ -52,6 +52,7 @@ object Dependencies {
     object Airbnb {
         const val epoxy = "com.airbnb.android:epoxy:4.0.0-beta4"
         const val epoxyProcessor = "com.airbnb.android:epoxy-processor:4.0.0-beta4"
+        const val epoxyDataBinding = "com.airbnb.android:epoxy-databinding:4.0.0-beta4"
     }
 
     object Network {

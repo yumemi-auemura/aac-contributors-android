@@ -31,11 +31,11 @@ class MainViewModel @ViewModelInject constructor(
         )
     }
 
-    fun onSingleClicked() {
-        _navigation.value = Nav.OpenSingle
+    fun onSingleClicked(contributor: ContributorEntity) {
+        _navigation.value = Nav.OpenSingle(contributor)
     }
 
     sealed class Nav : NavigationEvent {
-        object OpenSingle : Nav()
+        data class OpenSingle(val contributor: ContributorEntity) : Nav()
     }
 }
