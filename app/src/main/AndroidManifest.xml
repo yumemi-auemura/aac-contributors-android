@@ -4,6 +4,8 @@
     package="com.github.auemura.aaccontributors"
     >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MainApplication"
         android:allowBackup="false"

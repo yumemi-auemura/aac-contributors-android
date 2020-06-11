@@ -11,20 +11,24 @@ import androidx.lifecycle.viewModelScope
 import com.github.auemura.aaccontributors.core.coroutine.DispatcherProvider
 import com.github.auemura.aaccontributors.core.navigation.NavigationEvent
 import com.github.auemura.aaccontributors.core.navigation.navigationEventLiveData
-import com.github.auemura.aaccontributors.repository.SampleRepository
+import com.github.auemura.aaccontributors.domain.github.ContributorEntity
+import com.github.auemura.aaccontributors.repository.GitHubRepository
 
 class MainViewModel @ViewModelInject constructor(
     @Assisted private val savedStateHandle: SavedStateHandle,
     dispatcherProvider: DispatcherProvider,
-    private val sampleRepository: SampleRepository
+    private val gitHubRepository: GitHubRepository
 ) : ViewModel() {
 
     private val _navigation = viewModelScope.navigationEventLiveData<Nav>()
     val navigation: LiveData<Nav>
         get() = _navigation
 
-    val greeting: LiveData<String> = liveData(viewModelScope.coroutineContext) {
-        emitSource(sampleRepository.greeting().asLiveData(dispatcherProvider.mainContext))
+    val contributors: LiveData<List<ContributorEntity>> = liveData(viewModelScope.coroutineContext) {
+        emitSource(
+            gitHubRepository.getContributors("googlesamples", "android-architecture-components")
+                .asLiveData(dispatcherProvider.mainContext)
+        )
     }
 
     fun onSingleClicked() {
