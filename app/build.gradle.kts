@@ -5,6 +5,7 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+    kotlin("plugin.serialization")
 }
 
 apply(plugin = "dagger.hilt.android.plugin")
@@ -55,6 +56,7 @@ dependencies {
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.KotlinX.coroutinesCore)
     implementation(Dependencies.KotlinX.coroutinesAndroid)
+    implementation(Dependencies.KotlinX.kotlinxSerializationRuntime)
     testImplementation(Dependencies.KotlinX.Test.coroutinesTest)
 
     implementation(Dependencies.AndroidX.core)
@@ -85,6 +87,10 @@ dependencies {
     // Epoxy
     implementation(Dependencies.Airbnb.epoxy)
     kapt(Dependencies.Airbnb.epoxyProcessor)
+
+    implementation(Dependencies.Network.retrofit)
+    implementation(Dependencies.Network.okhttp)
+    implementation(Dependencies.Network.kotlinxSerializationConverter)
 
     testImplementation(Dependencies.Test.jUnit)
 

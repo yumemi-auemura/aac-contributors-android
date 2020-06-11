@@ -15,6 +15,7 @@ object Dependencies {
     object KotlinX {
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6"
         const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
+        const val kotlinxSerializationRuntime = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0"
 
         object Test {
             const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.6"
@@ -51,6 +52,12 @@ object Dependencies {
     object Airbnb {
         const val epoxy = "com.airbnb.android:epoxy:4.0.0-beta4"
         const val epoxyProcessor = "com.airbnb.android:epoxy-processor:4.0.0-beta4"
+    }
+
+    object Network {
+        const val retrofit = "com.squareup.retrofit2:retrofit:2.8.1"
+        const val okhttp = "com.squareup.okhttp3:okhttp:4.5.0"
+        const val kotlinxSerializationConverter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.5.0"
     }
 
     object Test {
