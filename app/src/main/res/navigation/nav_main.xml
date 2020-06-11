@@ -4,17 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/mainFragment"
+    app:startDestination="@id/collectionFragment"
     >
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.github.auemura.aaccontributors.ui.MainFragment"
-        android:label="MainFragment"
-        tools:layout="@layout/main_fragment"
+        android:id="@+id/collectionFragment"
+        android:name="com.github.auemura.aaccontributors.ui.collection.CollectionFragment"
+        android:label="CollectionFragment"
+        tools:layout="@layout/fragment_collection"
         >
         <action
-            android:id="@+id/action_mainFragment_to_singleFragment"
+            android:id="@+id/action_collectionFragment_to_singleFragment"
             app:destination="@id/singleFragment"
             />
     </fragment>

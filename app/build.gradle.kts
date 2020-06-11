@@ -86,6 +86,7 @@ dependencies {
 
     // Epoxy
     implementation(Dependencies.Airbnb.epoxy)
+    implementation(Dependencies.Airbnb.epoxyDataBinding)
     kapt(Dependencies.Airbnb.epoxyProcessor)
 
     implementation(Dependencies.Network.retrofit)
