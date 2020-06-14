@@ -11,6 +11,7 @@ import androidx.lifecycle.viewModelScope
 import com.github.auemura.aaccontributors.core.coroutine.DispatcherProvider
 import com.github.auemura.aaccontributors.core.navigation.NavigationEvent
 import com.github.auemura.aaccontributors.core.navigation.navigationEventLiveData
+import com.github.auemura.aaccontributors.core.status.Status
 import com.github.auemura.aaccontributors.domain.github.ContributorEntity
 import com.github.auemura.aaccontributors.repository.GitHubRepository
 
@@ -24,9 +25,10 @@ class MainViewModel @ViewModelInject constructor(
     val navigation: LiveData<Nav>
         get() = _navigation
 
-    val contributors: LiveData<List<ContributorEntity>> = liveData(viewModelScope.coroutineContext) {
+    val contributors: LiveData<Status<List<ContributorEntity>>> = liveData(viewModelScope.coroutineContext) {
         emitSource(
-            gitHubRepository.getContributors("googlesamples", "android-architecture-components")
+            gitHubRepository
+                .getContributors("googlesamples", "android-architecture-components")
                 .asLiveData(dispatcherProvider.mainContext)
         )
     }
