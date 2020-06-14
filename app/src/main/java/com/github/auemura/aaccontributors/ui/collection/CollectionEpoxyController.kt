@@ -7,7 +7,7 @@ import com.airbnb.epoxy.TypedEpoxyController
 import com.github.auemura.aaccontributors.core.status.Status
 import com.github.auemura.aaccontributors.domain.github.ContributorEntity
 import com.github.auemura.aaccontributors.ui.MainViewModel
-import com.github.auemura.aaccontributors.viewSingleItem
+import com.github.auemura.aaccontributors.viewCollectionItem
 
 class CollectionEpoxyController(
     lifecycleOwner: LifecycleOwner,
@@ -30,7 +30,7 @@ class CollectionEpoxyController(
             is Status.Success -> {
                 val contributors = data.data
                 contributors.forEach {
-                    viewSingleItem {
+                    viewCollectionItem {
                         id(it.id)
                         item(it)
                         viewModel(viewModel)
