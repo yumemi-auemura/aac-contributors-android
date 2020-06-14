@@ -89,6 +89,8 @@ dependencies {
     implementation(Dependencies.Airbnb.epoxyDataBinding)
     kapt(Dependencies.Airbnb.epoxyProcessor)
 
+    implementation(Dependencies.Image.coil)
+
     implementation(Dependencies.Network.retrofit)
     implementation(Dependencies.Network.okhttp)
     implementation(Dependencies.Network.kotlinxSerializationConverter)

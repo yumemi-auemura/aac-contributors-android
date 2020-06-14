@@ -1,5 +1,5 @@
 @EpoxyDataBindingLayouts({
-                                 R.layout.view_single_item
+                                 R.layout.view_collection_item
                          })
 
 package com.github.auemura.aaccontributors;

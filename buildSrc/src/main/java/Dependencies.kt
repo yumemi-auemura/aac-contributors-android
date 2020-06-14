@@ -55,6 +55,10 @@ object Dependencies {
         const val epoxyDataBinding = "com.airbnb.android:epoxy-databinding:4.0.0-beta4"
     }
 
+    object Image {
+        const val coil = "io.coil-kt:coil:0.11.0"
+    }
+
     object Network {
         const val retrofit = "com.squareup.retrofit2:retrofit:2.8.1"
         const val okhttp = "com.squareup.okhttp3:okhttp:4.5.0"

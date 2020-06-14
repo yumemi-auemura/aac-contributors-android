@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
     <data>
 
@@ -16,7 +19,6 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:foreground="?attr/selectableItemBackground"
@@ -25,26 +27,52 @@
 
         <ImageView
             android:id="@+id/single_image_view"
+            srcByUrl="@{ item.avatarUrl }"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:contentDescription="picture"
-            android:src="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            tools:src="@color/colorPrimary"
             />
 
         <TextView
+            android:id="@+id/collection_login_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="16dp"
-            android:text="Contributor"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{ item.login }"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/collection_contributions_text_view"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@id/single_image_view"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="login\nlogin"
+            />
+
+        <TextView
+            android:id="@+id/collection_contributions_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{ Integer.toString(item.contributions) }"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/single_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/collection_login_text_view"
+            tools:text="contributions"
             />
 
         <View
